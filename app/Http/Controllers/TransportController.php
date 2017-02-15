@@ -21,15 +21,12 @@ class TransportController extends Controller
      }
 
     public function transportInsert(TransportRequest $request){
-
       $transportInsert = new Transport();
       $transportInsert->vehicle = $request->vehicle;
       /*$transportInsert->create($request->all());*/
       $transportInsert->save();
 
-        return redirect('transport')->with('message', 'Registro exitoso!');
-
-
+        return redirect('transport')->with('message', 'Se registro el usuario '.$transportInsert->vehicle);
 
     }
 

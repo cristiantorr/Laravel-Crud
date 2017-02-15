@@ -25,7 +25,9 @@ class TransportRequest extends FormRequest
     public function rules()
     {
         return [
-            'vehicle'=>'unique:transport,vehicle'
+          'vehicle'=>'required|unique:transport,vehicle'
         ];
     }
+
+
 }
