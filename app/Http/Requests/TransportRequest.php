@@ -25,7 +25,18 @@ class TransportRequest extends FormRequest
     public function rules()
     {
         return [
-          'vehicle'=>'required|unique:transport,vehicle'
+          'vehicle'   => 'required',
+          'choiceDay' => 'required',
+          'price'     => 'required'
+        ];
+    }
+
+     public function messages()
+    {
+        return [
+          'vehicle.required'   => 'Vehiculo es requerido',
+          'choiceDay.required' => 'El día es requerido',
+          'price.required'     => 'Precio es requerido'
         ];
     }
 

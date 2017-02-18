@@ -13,5 +13,5 @@ class Transport extends Model
      */
     protected $table = 'transport';
 
-    protected $fillable	= ['vehicle'];
+    protected $fillable	= ['vehicle', 'choiceDay', 'price'];
 }
