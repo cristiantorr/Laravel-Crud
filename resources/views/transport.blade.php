@@ -27,12 +27,16 @@
                                   ]
                            )
           !!--}}
-          <select class="icons" name="choiceDay">
+          <!--<select class="icons" name="choiceDay">
             <option value="" disabled selected>Escoja la opción</option>
-            <option class="circle"  value="manana">Mañana</option><!-- con data-icon="images/sample-1.jpg" se puede poner imagenes ene l select-->
+            <option class="circle"  value="manana">Mañana</option>
             <option value="circle" value="tarde">Tarde</option>
             <option value="circle" value="mananaytarde">Mañana/Tarde</option>
-          </select>
+          </select>-->
+
+
+          {!!Form::select('choiceDay', array('manana' => 'Mañana', 'tarde' => 'Tarde', 'mananaytarde' => 'Mañana/Tarde'), 'escoja', ['class' => 'icons'])  !!}
+
           </div>
             {{ $errors->first('choiceDay') }}
         </div>
@@ -47,6 +51,7 @@
 
         <div class="form-group ">
           {!! Form::submit('Enviar', ['class' => 'btn btn-success' ] ) !!}
+          <a href="{{ route('transportViewSearch') }}" class="btn btn-default">Buscar</a>
         </div>
       {!! Form::close() !!}
     </div>

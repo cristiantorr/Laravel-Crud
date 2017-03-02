@@ -68,8 +68,9 @@ class TransportController extends Controller
     public function transportUpdate(Request $request){
 
       $transportUpdate = Transport::find($request->ID);
-      $transportUpdate->vehicle = $request->vehicle;
-      $transportUpdate->price  = $request->price;
+      $transportUpdate->vehicle   = $request->vehicle;
+      $transportUpdate->choiceDay = $request->choiceDay; 
+      $transportUpdate->price     = $request->price;
       $transportUpdate->save();
       return view('transportsearch');
 

@@ -16,8 +16,11 @@ Route::get('/', function () {
 });
 
 Route::get('/transport', 'TransportController@transportView')->name('transport');
+Route::get('/userview', 'UserController@returnViewUser')->name('userview');
+
 
 Route::get('/transportViewSearch', 'TransportController@transportViewSearch')->name('transportViewSearch');
+Route::get('/user', 'UserController@returnViewUser')->name('returnViewUser');
 
 Route::post('/transportInsert', 'TransportController@transportInsert')->name('transportInsert');
 
@@ -32,4 +35,10 @@ Route::get('transportDelete/{id}', 'TransportController@transportDelete')->name(
 Route::get('/transportUpdateForm/{id}', 'TransportController@transportUpdateForm')->name('transportUpdateForm');
 
 Route::post('/transportUpdate', 'TransportController@transportUpdate')->name('transportUpdate');
+
+// Intentando  angular
+Route::get('/userall', 'UserController@allUser')->name('allUser');
+//route to add
+Route::post('/userall','UserController@createUser' )->name('createUser');
+
 

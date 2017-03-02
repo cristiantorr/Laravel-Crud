@@ -40,11 +40,11 @@
             <tbody>
               @foreach($transportSearchs as $row)
                 <tr>
-                  <td>{{$row->id}}</td>
-                  <td>{{$row->vehicle}}</td>
-                  <td>Falta</td>
-                  <td>{{$row->price}}</td>
-                  <td>{{$row->created_at}}</td>
+                  <td>{{ $row->id }}</td>
+                  <td>{{ $row->vehicle }}</td>
+                  <td>{{ $row->choiceDay }}</td>
+                  <td>{{ $row->price }}</td>
+                  <td>{{ $row->created_at }}</td>
                   <td><a href="{{ route('transportUpdateForm',$row->id) }}" >Actualizar</a></td>
                   <td><a href="{{ route('transportDelete', $row->id) }}">Eliminar</a></td>
                 </tr>
@@ -82,18 +82,21 @@
               </div>
                   {{-- $errors->first('vehicle') --}}
             </div>
-             <!-- <div class="row">
+             <div class="row">
                 <div class="input-field col s12">
-               
-                  <select class="icons" name="choiceDay">
-                    <option value="" disabled selected>Escoja la opción</option>
+
+                {!!Form::select('choiceDay', 
+                array('manana' => 'Mañana', 'tarde' => 'Tarde', 'mananaytarde' => 'Mañana/Tarde'),$transportUpdateForm['choiceDay'], ['class' => 'icons'])  !!}
+
+                  <!--<select class="icons" name="choiceDay">
+                    <option value="" disabled selected></option>
                     <option class="circle"  value="manana">Mañana</option>
                     <option value="circle" value="tarde">Tarde</option>
                     <option value="circle" value="mananaytarde">Mañana/Tarde</option>
-                  </select>
+                  </select>-->
                 </div>
                   {{-- $errors->first('choiceDay') --}}
-              </div>-->
+              </div>
 
              <div class="row">
               <div class="input-field col s12">
